@@ -6,7 +6,7 @@ interface TWProps {
   content?: string;
 }
 
-const SiteLink: React.FC<TWProps> = ({ title, link, content }) => {
+const SiteLink: React.FC<TWProps> = ({title, link, content}) => {
   return (
     <div>
       <a href={link}>{title}</a>
@@ -24,14 +24,10 @@ export default function Navbar() {
           link="https://instagram.com/standardrobot.wav"
           content="pics"
         />
-        <SiteLink
-          title="Blog"
-          link="https://blog.standardrobot.dev"
-          content="words"
-        />
+        <SiteLink title="Blog" link="/blog" content="words" />
         <SiteLink
           title="Twitter"
-          link="https://twitter.com/standard_robot"
+          link="https://twitter.com/standardrobot_"
           content="fewer words"
         />
         <SiteLink
@@ -44,7 +40,6 @@ export default function Navbar() {
           link="https://github.com/standard-robot"
           content="src code"
         />
-
       </div>
     </div>
   );

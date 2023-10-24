@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from './navbar';
 import './components.css';
-import Typewriter, { LoadingSequence } from './typing';
+import Typewriter, {LoadingSequence} from './typing';
 
 export default function Home() {
   const intro = (
@@ -27,6 +27,8 @@ export default function Home() {
           </div>
           <p className="text-sm">zsh</p>
         </div>
+
+        <Navbar />
         <div className="mt-4 flex justify-center">
           <div id="test">
             <img
@@ -43,12 +45,12 @@ export default function Home() {
             <p className="text-mainPurple">
               <span className="items-center flex">
                 ~ | ${' '}
-                <Typewriter txt="pkg install standardrobot@latest" delay={20} />
+                <Typewriter txt="pkg install standardrobot@latest" delay={10} />
               </span>
             </p>
-          }           
+          }
           childElement2={<p className="text-white">+ standardrobot@1.0.0</p>}
-          delay={1000}
+          delay={500}
         />
         <br />
         <div>
@@ -57,8 +59,7 @@ export default function Home() {
               <p className="text-mainPurple">
                 <span className="items-center flex">
                   {' '}
-                  ~ | ${' '}
-                  <Typewriter txt="whoami" delay={20} />
+                  ~ | $ <Typewriter txt="whoami" delay={10} />
                 </span>{' '}
               </p>
             }
@@ -66,7 +67,6 @@ export default function Home() {
             delay={3000}
           />
         </div>
-        <Navbar />
       </div>
     </body>
   );
