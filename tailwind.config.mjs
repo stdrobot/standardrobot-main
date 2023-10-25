@@ -11,6 +11,7 @@ export const theme = {
       bsod: '#000A5F',
       mainSilver: '#A0B2BB',
       mainPurple: '#695A88',
+      textPurple: '#79689c',
       border: '#AAAAAA',
     },
     fontFamily: {
