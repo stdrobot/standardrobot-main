@@ -17,57 +17,56 @@ export default function Home() {
   );
 
   return (
-    <body>
-      <div className="bg-black text-white p-8 w-full h-screen font-mono">
-        <div className="flex justify-between items-center">
-          <div className="flex space-x-2 text-red-500">
-            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-          </div>
-          <p className="text-sm">zsh</p>
+    <div className="bg-black text-white w-[100vw] h-[100vh] p-8 font-mono">
+      <div className="flex justify-between items-center">
+        <div className="flex space-x-2 text-red-500">
+          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
-
+        <p className="text-sm">zsh</p>
+      </div>
+      <div className="w-full">
         <Navbar />
-        <div className="mt-4 flex justify-center">
-          <div id="test">
-            <img
-              src="/robot.svg"
-              alt="standardrobot logo"
-              width="300"
-              height="250"
-              loading="eager"
-            />
-          </div>
+      </div>
+      <div className="mt-4 flex justify-center">
+        <div id="test">
+          <img
+            src="/robot.svg"
+            alt="standardrobot logo"
+            width="300"
+            height="250"
+            loading="eager"
+          />
         </div>
+      </div>
+      <LoadingSequence
+        childElement={
+          <p className="text-mainPurple">
+            <span className="items-center flex">
+              ~ | ${' '}
+              <Typewriter txt="pkg install standardrobot@latest" delay={10} />
+            </span>
+          </p>
+        }
+        childElement2={<p className="text-white">+ standardrobot@1.0.0</p>}
+        delay={500}
+      />
+      <br />
+      <div>
         <LoadingSequence
           childElement={
             <p className="text-mainPurple">
               <span className="items-center flex">
-                ~ | ${' '}
-                <Typewriter txt="pkg install standardrobot@latest" delay={10} />
-              </span>
+                {' '}
+                ~ | $ <Typewriter txt="whoami" delay={10} />
+              </span>{' '}
             </p>
           }
-          childElement2={<p className="text-white">+ standardrobot@1.0.0</p>}
-          delay={500}
+          childElement2={intro}
+          delay={3000}
         />
-        <br />
-        <div>
-          <LoadingSequence
-            childElement={
-              <p className="text-mainPurple">
-                <span className="items-center flex">
-                  {' '}
-                  ~ | $ <Typewriter txt="whoami" delay={10} />
-                </span>{' '}
-              </p>
-            }
-            childElement2={intro}
-            delay={3000}
-          />
-        </div>
       </div>
-    </body>
+    </div>
   );
 }
