@@ -6,7 +6,7 @@ interface TWProps {
   content?: string;
 }
 
-const SiteLink: React.FC<TWProps> = ({title, link, content}) => {
+const SiteLink: React.FC<TWProps> = ({ title, link, content }) => {
   return (
     <div>
       <a href={link}>{title}</a>
@@ -17,7 +17,7 @@ const SiteLink: React.FC<TWProps> = ({title, link, content}) => {
 
 export default function Navbar() {
   return (
-    <div className="flex bottom mt-20">
+    <div className="w-[100vw] flex mt-20 text-white">
       <div className="mb-10 grid max-md:text-center max-md:w-screen w-full justify-between grid-cols-5 text-center">
         <SiteLink
           title="Instagram"

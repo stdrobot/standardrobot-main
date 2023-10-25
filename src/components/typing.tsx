@@ -1,10 +1,11 @@
 'use client';
 import React, { useState, useEffect, type ReactNode } from 'react';
-import { DotSpinner } from '@uiball/loaders';
+import { DotPulse } from '@uiball/loaders';
 interface TWProps {
   txt: string;
   delay: number;
   loop?: boolean;
+  color?: string;
   font?: string;
 }
 
@@ -18,13 +19,15 @@ const Typewriter: React.FC<TWProps> = ({
   txt,
   delay,
   loop = false,
+  color,
   font = 'firacode',
 }) => {
   const [currText, setCurrText] = useState('');
   const [currIndex, setCurrIndex] = useState(0);
-  const style = `text-white font-${font}`;
+  const style = `text-${color} font-${font}`;
+
   useEffect(() => {
-    let timeout: NodeJS.timeout | undefined;
+    let timeout: NodeJS.Timeout | undefined;
     let n = txt.length;
     if (loop == true) {
       n = txt.length - 1;
@@ -48,9 +51,24 @@ const Typewriter: React.FC<TWProps> = ({
   return <span className={style}>{currText}</span>;
 };
 
-export const LoadingSequence: React.FC<LSProps> = ({ childElement, childElement2, delay }) => {
+export const LoadingSequence: React.FC<LSProps> = ({
+  childElement,
+  childElement2,
+  delay,
+}) => {
   const [showStep1, setShowStep1] = useState(false);
   const [showStep2, setShowStep2] = useState(false);
+  const [showDotPulse, setShowDotPulse] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowDotPulse(false);
+    }, delay);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [delay]);
 
   useEffect(() => {
     const step1Timeout = setTimeout(() => {
@@ -61,12 +79,12 @@ export const LoadingSequence: React.FC<LSProps> = ({ childElement, childElement2
       clearTimeout(step1Timeout);
     };
   }, [delay]);
-  
+
   useEffect(() => {
     if (showStep1) {
       const step2Timeout = setTimeout(() => {
         setShowStep2(true);
-      }, delay+20);
+      }, delay + 20);
       return () => {
         clearTimeout(step2Timeout);
       };
@@ -75,18 +93,14 @@ export const LoadingSequence: React.FC<LSProps> = ({ childElement, childElement2
 
   return (
     <div>
-        {showStep1 && (
-          <span className="items-center text-mainPurple flex"> {childElement}</span>
+      {showStep1 && <p className="items-center flex"> {childElement}</p>}
+      <div>
+        {showStep2 ? (
+          childElement2
+        ) : (
+          <div>{showStep1 && <DotPulse color="#A0B2BB" />}</div>
         )}
-        <div>
-          {showStep1 && showStep2 ? (
-            <span className="items-center flex"> {childElement2}</span>
-          ) : ( showStep1 &&
-            <div className="items-center ml-20">
-             <DotSpinner color="#A0B2BB" />
-            </div>
-          )}
-        </div>
+      </div>
     </div>
   );
 };

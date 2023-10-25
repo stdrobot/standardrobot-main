@@ -2,7 +2,26 @@
 import React from 'react';
 import Navbar from './navbar';
 import './components.css';
-import Typewriter, {LoadingSequence} from './typing';
+import Typewriter, { LoadingSequence } from './typing';
+
+const Buttons = () => {
+  const close = () => {
+    alert('Button clicked!');
+  };
+  return (
+    <div className="flex justify-between items-center">
+      <div className="flex space-x-2 text-red-500">
+        <button
+          className="w-3 h-3 rounded-full border-dashed border-white bg-red-500"
+          onClick={close}
+        ></button>
+        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+      </div>
+      <p className="text-white text-sm">zsh</p>
+    </div>
+  );
+};
 
 export default function Home() {
   const intro = (
@@ -17,16 +36,9 @@ export default function Home() {
   );
 
   return (
-    <div className="bg-black text-white w-[100vw] h-[100vh] p-8 font-mono">
-      <div className="flex justify-between items-center">
-        <div className="flex space-x-2 text-red-500">
-          <div className="w-3 h-3 rounded-full bg-red-500"></div>
-          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-          <div className="w-3 h-3 rounded-full bg-green-500"></div>
-        </div>
-        <p className="text-sm">zsh</p>
-      </div>
-      <div className="w-full">
+    <div className="bg-black p-8 w-full h-full font-mono">
+      <Buttons />
+      <div className="flex">
         <Navbar />
       </div>
       <div className="mt-4 flex justify-center">
@@ -42,29 +54,29 @@ export default function Home() {
       </div>
       <LoadingSequence
         childElement={
-          <p className="text-mainPurple">
-            <span className="items-center flex">
-              ~ | ${' '}
-              <Typewriter txt="pkg install standardrobot@latest" delay={10} />
-            </span>
-          </p>
+          <span className="items-center flex text-textPurple">
+            ~ | $&emsp;
+            <Typewriter
+              color="textPurple"
+              txt="pkg install standardrobot@latest"
+              delay={10}
+            />
+          </span>
         }
         childElement2={<p className="text-white">+ standardrobot@1.0.0</p>}
         delay={500}
       />
       <br />
-      <div>
+      <div className="items-center">
         <LoadingSequence
           childElement={
-            <p className="text-mainPurple">
-              <span className="items-center flex">
-                {' '}
-                ~ | $ <Typewriter txt="whoami" delay={10} />
-              </span>{' '}
-            </p>
+            <span className="items-center flex text-textPurple">
+              ~ | $&emsp;
+              <Typewriter color="textPurple" txt="whoami" delay={20} />
+            </span>
           }
           childElement2={intro}
-          delay={3000}
+          delay={2000}
         />
       </div>
     </div>
