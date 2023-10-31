@@ -24,7 +24,7 @@ const Typewriter: React.FC<TWProps> = ({
 }) => {
   const [currText, setCurrText] = useState('');
   const [currIndex, setCurrIndex] = useState(0);
-  const style = `text-${color} font-${font}`;
+  const style = `text-${color} font-sans`;
 
   useEffect(() => {
     let timeout: NodeJS.Timeout | undefined;

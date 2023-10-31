@@ -15,9 +15,10 @@ export const theme = {
       border: '#AAAAAA',
     },
     fontFamily: {
-      firacode: ['Fira_Code', 'sans-serif'],
-      lucida: ['Lucida_Console'],
+      firacode: ['Fira Code', 'monospace'],
+      geist: ['Geist', 'sans-serif'],
       w95fa: ['w95fa', 'sans-serif'],
+      sans: ['var(--font-geist-sans)'],
     },
   },
 };

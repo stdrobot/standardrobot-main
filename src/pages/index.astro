@@ -1,11 +1,18 @@
 ---
 import Home from '../components/home';
-import Head from '../layouts/Head.astro';
 ---
 
-<html lang="en-us">
-  <Head />
-  <body class="w-full h-screen">
+<html lang="en" class="h-full w-full font-firacode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <meta name="generator" content={Astro.generator} />
+    <title>locahost:r0b07/</title>
+  </head>
+  <body class="h-full w-full overflow-x-hidden overflow-y-hidden">
     <Home client:load />
   </body>
 </html>

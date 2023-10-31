@@ -18,9 +18,9 @@ const SiteLink: React.FC<TWProps> = ({ title, link, content }) => {
 export default function Navbar() {
   return (
     <div className="w-[100vw] flex mt-20 text-white">
-      <div className="mb-10 grid max-md:text-center max-md:w-screen w-full justify-between grid-cols-5 text-center">
+      <div className="mb-16 grid max-md:text-center max-md:w-screen w-full grid-cols-5 text-center">
         <SiteLink
-          title="Instagram"
+          title="IG"
           link="https://instagram.com/standardrobot.wav"
           content="pics"
         />
