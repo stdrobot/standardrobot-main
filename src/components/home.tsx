@@ -3,7 +3,7 @@ import React from 'react';
 import Navbar from './navbar';
 import './components.css';
 import Typewriter, { LoadingSequence } from './typing';
-import { BiChevronRight } from 'react-icons/bi';
+import { BiChevronRight } from 'react-icons/bi/index';
 
 const Buttons = () => {
   const close = () => {
@@ -56,7 +56,7 @@ export default function Home() {
       <LoadingSequence
         childElement={
           <span className="items-center flex text-textPurple">
-            /home/robot <BiChevronRight size={24} /> $&emsp;
+            /home/robot <BiChevronRight size={24} color="textPurple" /> $&emsp;
             <Typewriter
               color="white"
               txt="pkg install standardrobot@latest"
@@ -72,7 +72,8 @@ export default function Home() {
         <LoadingSequence
           childElement={
             <span className="items-center flex text-textPurple">
-              /home/robot <BiChevronRight size={24} /> $&emsp;
+              /home/robot <BiChevronRight size={24} color="textPurple" />{' '}
+              $&emsp;
               <Typewriter color="white" txt="whoami" delay={20} />
             </span>
           }
