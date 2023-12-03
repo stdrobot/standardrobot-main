@@ -27,8 +27,7 @@ const Buttons = () => {
 export default function Home() {
   const intro = (
     <p className="text-white">
-      + I'm standardrobot (one word, all lowercase, it's important to make a
-      distinction). I enjoy making electronic music and programming.
+      + I'm standardrobot I enjoy making electronic music and programming.
       Professionally, I'm a software engineer with have a strong interest in
       cybersecurity. This project came about because I bought this domain to
       secure the name. I'll be using the opportunity as a trial by fire dive
@@ -37,7 +36,7 @@ export default function Home() {
   );
 
   return (
-    <div className="bg-black p-8 min-h-screen min-w-screen ">
+    <div className="bg-black p-8 min-h-screen min-w-screen flex flex-col">
       <Buttons />
       <div className="flex">
         <Navbar />
