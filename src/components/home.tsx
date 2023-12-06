@@ -28,57 +28,58 @@ export default function Home() {
   const intro = (
     <p className="text-white">
       + I'm standardrobot I enjoy making electronic music and programming.
-      Professionally, I'm a software engineer with have a strong interest in
-      cybersecurity. This project came about because I bought this domain to
-      secure the name. I'll be using the opportunity as a trial by fire dive
-      into web-dev
+      <br /> + Professionally, I'm a software engineer with have a strong
+      interest in cybersecurity.
+      <br /> + This project came about because I bought this domain to secure
+      the name.
     </p>
   );
 
   return (
-    <div className="bg-black p-8 min-h-screen min-w-screen flex flex-col">
+    <div className="bg-black p-8 h-full flex flex-col overflow-auto">
       <Buttons />
       <div className="flex">
         <Navbar />
       </div>
-      <div className="mt-4 flex justify-center">
-        <div id="test">
-          <img
-            src="/robot.svg"
-            alt="standardrobot logo"
-            width="300"
-            height="250"
-            loading="eager"
-          />
-        </div>
+      <div className="flex justify-center" id="test">
+        <img
+          src="/robot.svg"
+          alt="standardrobot logo"
+          width="300"
+          height="250"
+          loading="eager"
+        />
       </div>
-      <LoadingSequence
-        childElement={
-          <span className="items-center flex text-textPurple">
-            /home/robot <BiChevronRight size={24} color="textPurple" /> $&emsp;
-            <Typewriter
-              color="white"
-              txt="pkg install standardrobot@latest"
-              delay={10}
-            />
-          </span>
-        }
-        childElement2={<p className="text-white">+ standardrobot@1.0.0</p>}
-        delay={500}
-      />
-      <br />
-      <div className="items-center">
+      <div className="p-24 flex-col">
         <LoadingSequence
           childElement={
             <span className="items-center flex text-textPurple">
               /home/robot <BiChevronRight size={24} color="textPurple" />{' '}
               $&emsp;
-              <Typewriter color="white" txt="whoami" delay={20} />
+              <Typewriter
+                color="white"
+                txt="pkg install standardrobot"
+                delay={10}
+              />
             </span>
           }
-          childElement2={intro}
-          delay={2000}
+          childElement2={<p className="text-white">+ standardrobot@1.0.0</p>}
+          delay={500}
         />
+        <br />
+        <div className="items-center">
+          <LoadingSequence
+            childElement={
+              <span className="items-center flex text-textPurple">
+                /home/robot <BiChevronRight size={24} color="textPurple" />{' '}
+                $&emsp;
+                <Typewriter color="white" txt="whoami" delay={20} />
+              </span>
+            }
+            childElement2={intro}
+            delay={2000}
+          />
+        </div>
       </div>
     </div>
   );

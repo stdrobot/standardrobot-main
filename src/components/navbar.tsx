@@ -8,7 +8,7 @@ interface TWProps {
 
 const SiteLink: React.FC<TWProps> = ({ title, link, content }) => {
   return (
-    <div>
+    <div className="text-center">
       <a href={link}>{title}</a>
       <p>{content}</p>
     </div>
@@ -17,8 +17,8 @@ const SiteLink: React.FC<TWProps> = ({ title, link, content }) => {
 
 export default function Navbar() {
   return (
-    <div className="w-[100vw] flex mt-20 text-white">
-      <div className="mb-16 grid max-md:text-center max-md:w-screen w-full grid-cols-5 text-center">
+    <div className="w-full flex flex-col mt-20 text-mainSilver items-center">
+      <div className="mb-16 grid w-full grid-cols-1 md:grid-cols-5 gap-4">
         <SiteLink
           title="IG"
           link="https://instagram.com/standardrobot.wav"
