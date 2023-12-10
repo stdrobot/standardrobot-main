@@ -30,27 +30,27 @@ export default function Home() {
       + I'm standardrobot I enjoy making electronic music and programming.
       <br /> + Professionally, I'm a software engineer with have a strong
       interest in cybersecurity.
-      <br /> + This project came about because I bought this domain to secure
-      the name.
+      <br />+ Check out the links above for things.
     </p>
   );
 
   return (
-    <div className="bg-black p-8 h-full flex flex-col overflow-auto">
+    <div className="bg-black p-8 h-full text-lg w-full flex flex-col overflow-auto">
       <Buttons />
       <div className="flex">
         <Navbar />
       </div>
+
       <div className="flex justify-center" id="test">
         <img
           src="/robot.svg"
           alt="standardrobot logo"
-          width="300"
-          height="250"
+          width="350"
+          height="300"
           loading="eager"
         />
       </div>
-      <div className="p-24 flex-col">
+      <div className="p-12">
         <LoadingSequence
           childElement={
             <span className="items-center flex text-textPurple">
@@ -63,23 +63,23 @@ export default function Home() {
               />
             </span>
           }
-          childElement2={<p className="text-white">+ standardrobot@1.0.0</p>}
+          childElement2={
+            <p className="w-full text-white">+ standardrobot@1.0.0</p>
+          }
           delay={500}
         />
         <br />
-        <div className="items-center">
-          <LoadingSequence
-            childElement={
-              <span className="items-center flex text-textPurple">
-                /home/robot <BiChevronRight size={24} color="textPurple" />{' '}
-                $&emsp;
-                <Typewriter color="white" txt="whoami" delay={20} />
-              </span>
-            }
-            childElement2={intro}
-            delay={2000}
-          />
-        </div>
+        <LoadingSequence
+          childElement={
+            <span className="items-center flex text-textPurple">
+              /home/robot <BiChevronRight size={24} color="textPurple" />{' '}
+              $&emsp;
+              <Typewriter color="white" txt="whoami" delay={20} />
+            </span>
+          }
+          childElement2={intro}
+          delay={2000}
+        />
       </div>
     </div>
   );

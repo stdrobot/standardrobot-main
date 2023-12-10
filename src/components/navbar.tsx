@@ -8,7 +8,7 @@ interface TWProps {
 
 const SiteLink: React.FC<TWProps> = ({ title, link, content }) => {
   return (
-    <div className="text-center">
+    <div className="m-0.5 text-center hover:text-white">
       <a href={link}>{title}</a>
       <p>{content}</p>
     </div>
