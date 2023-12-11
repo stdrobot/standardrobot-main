@@ -43,11 +43,7 @@
   border-radius: 5px;
 }
 
-.progress-bar {
-  height: 100%;
-  background: #4caf50; /* Set your progress bar color */
-  transition: width 0.3s ease-in-out;
-}
+
 
 /*
 #main-body {
