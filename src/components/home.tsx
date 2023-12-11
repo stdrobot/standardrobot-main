@@ -2,20 +2,20 @@
 import React from 'react';
 import Navbar from './navbar';
 import './components.css';
-import Typewriter, { LoadingSequence } from './typing';
-import { BiChevronRight } from 'react-icons/bi/index';
+import Typewriter, {LoadingSequence} from './typing';
+import {BiChevronRight} from 'react-icons/bi/index';
+import LoadineScreen from './loading';
 
 const Buttons = () => {
   const close = () => {
     alert('Button clicked!');
   };
   return (
-    <div className="flex justify-between items-center">
+    <div className="bg-black flex justify-between items-center">
       <div className="flex space-x-2 text-red-500">
         <button
           className="w-3 h-3 rounded-full border-dashed border-white bg-red-500"
-          onClick={close}
-        ></button>
+          onClick={close}></button>
         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
         <div className="w-3 h-3 rounded-full bg-green-500"></div>
       </div>
@@ -25,7 +25,7 @@ const Buttons = () => {
 };
 
 export default function Home() {
-  const intro = (
+  const aboutMe = (
     <p className="text-white">
       + I'm standardrobot I enjoy making electronic music and programming.
       <br /> + Professionally, I'm a software engineer with have a strong
@@ -35,9 +35,11 @@ export default function Home() {
   );
 
   return (
-    <div className="bg-black p-8 h-full text-lg w-full flex flex-col overflow-auto">
+    <div className="bg-white p-8 h-full text-lg w-full flex flex-col overflow-auto">
       <Buttons />
-      <div className="flex">
+      <LoadineScreen />
+
+      {/* <div className="flex">
         <Navbar />
       </div>
 
@@ -49,8 +51,9 @@ export default function Home() {
           height="300"
           loading="eager"
         />
-      </div>
-      <div className="p-12">
+      </div> */}
+
+      {/* <div className="p-12">
         <LoadingSequence
           childElement={
             <span className="items-center flex text-textPurple">
@@ -77,10 +80,10 @@ export default function Home() {
               <Typewriter color="white" txt="whoami" delay={20} />
             </span>
           }
-          childElement2={intro}
+          childElement2={aboutMe}
           delay={2000}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

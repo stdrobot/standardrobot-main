@@ -16,6 +16,39 @@
   animation: blink 1s step-end infinite;
 }
 
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff; /* Set your background color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.progress-bar-container {
+  width: 200px; /* Set your desired width */
+  height: 20px; /* Set your desired height */
+  border: 1px solid #ccc; /* Set your border color */
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #4caf50; /* Set your progress bar color */
+  transition: width 0.3s ease-in-out;
+}
+
 /*
 #main-body {
   background: linear-gradient(#a0b2bb) #695a88;
