@@ -5,6 +5,27 @@ import './components.css';
 import Typewriter, {LoadingSequence} from './typing';
 import {BiChevronRight} from 'react-icons/bi/index';
 
+const Buttons = () => {
+  const close = () => {
+    alert('Button clicked!');
+  };
+
+  return (
+    <div className="bg-black flex justify-between items-center">
+      <div className="flex space-x-2 text-red-500">
+        <button
+          className="w-3 h-3 rounded-full border-dashed border-white bg-red-500"
+          onClick={close}
+        ></button>
+        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+      </div>
+      <p className="text-white text-sm">zsh</p>
+    </div>
+  );
+};
+
+
 const Main = () => {
     const aboutMe = (
       <p className="text-white">
@@ -16,6 +37,7 @@ const Main = () => {
     );
     return (
       <div>
+          <Buttons />
         <div className="flex">
           <Navbar />
         </div>

@@ -16,7 +16,6 @@
   animation: blink 1s step-end infinite;
 }
 
-
 .loading-screen {
   position: fixed;
   top: 0;
@@ -36,14 +35,11 @@
 }
 
 .progress-bar-container {
-  width: 200px; /* Set your desired width */
+  width: 80%; /* Set your desired width */
   height: 20px; /* Set your desired height */
-  border: 1px solid #ccc; /* Set your border color */
   overflow: hidden;
   border-radius: 5px;
 }
-
-
 
 /*
 #main-body {
