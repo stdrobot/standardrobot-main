@@ -1,5 +1,5 @@
 'use client';
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './components.css';
 import Main from './main';
 import LoadingScreen from './loading';
@@ -12,7 +12,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-black p-8 w-screen h-screen text-lg flex flex-col ">
+    <div className="bg-black p-8 w-screen h-screen flex flex-col ">
       {loadingComplete ? (
         <LoadingScreen onProgressComplete={handleProgressComplete} />
       ) : (
