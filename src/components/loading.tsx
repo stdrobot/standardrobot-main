@@ -32,14 +32,11 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
   const [progress, setProgress] = useState<number>(0);
   const [doneASCII, setDoneASCII] = useState<string>('');
   const [noASCII, setNoASCII] = useState<string>(pendingASCII);
-  const [progBool, setProgBool] = useState(true);
 
   const parentRef = useRef(null);
 
   useEffect(() => {
-    if (progress === 100) {
-      setProgBool(false);
-      console.log(progBool);
+    if (progress == 100) {
       onProgressComplete();
     }
     const loadingTextOptions = [
@@ -72,20 +69,20 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
           ]
         );
       }
-      setDoneASCII(progASCII + progASCII.repeat(progress));   
+      setDoneASCII(progASCII + progASCII.repeat(progress));
     }, 200);
 
     return () => clearInterval(genLoad);
   }, [progress]);
 
   return (
-    <div className="fixed w-full h-full flex flex-col items-center justify-center">
-      <pre className="mb-2">{loadingASCII}</pre>
-      <div className="font-fira loading-text">{loadingText}</div>
-      <div ref={parentRef} className=" text-green progress-bar-container">
+    <div className="w-screen h-screen flex flex-col items-center justify-center">
+      <pre className="mb-2 text-white">{loadingASCII}</pre>
+      <div className="font-fira text-white loading-text">{loadingText}</div>
+      <div ref={parentRef} className="progress-bar-container">
         <div
           id="progress-bar"
-          className="bg-#4caf50 h-full w-full"
+          className=" text-white bg-#4caf50 h-[100vh] w-[100vw]"
           style={{ width: `${progress}%` }}
         >
           {doneASCII}
@@ -94,5 +91,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
     </div>
   );
 };
+
+
 
 export default LoadingScreen;
