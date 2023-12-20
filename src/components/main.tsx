@@ -35,7 +35,7 @@ const Main = () => {
     </p>
   );
   return (
-    <div className="bg-black p-8 h-screen w-screen flex flex-col overflow-auto">
+    <div className="bg-black p-8 text-lg h-screen w-screen flex flex-col overflow-auto">
       <Buttons />
       <div className="flex">
         <Navbar />

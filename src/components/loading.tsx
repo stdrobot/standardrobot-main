@@ -1,13 +1,13 @@
-import React, { useState, useRef, useEffect, useContext} from 'react';
-
+import React, {useState, useRef, useEffect} from 'react';
 
 interface LoadingScreenProps {
   onProgressComplete: () => void;
 }
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
-  const pendingASCII = '░ ';
+  const pendingASCII = 'H ';
   const progASCII = '▓ ';
+
   const loadingASCII = `
   KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
   KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
@@ -31,11 +31,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
   const [loadingText, setLoadingText] = useState<string>('Initializing...');
   const [progress, setProgress] = useState<number>(0);
   const [doneASCII, setDoneASCII] = useState<string>('');
-  const [noASCII, setNoASCII] = useState<string>(pendingASCII);
-
   const parentRef = useRef(null);
-
   useEffect(() => {
+    const parentWidth = parentRef.current.clientWidth;
+
     if (progress == 100) {
       onProgressComplete();
     }
@@ -50,48 +49,46 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
       'Browsing Reddit ...',
       'Fetching data ...',
       'Checking Cache ...',
-      'Reading Config ...',
+      'Reading Config ...'
     ];
-
     const genLoad = setInterval(() => {
-
       if (progress < 100) {
+
         setProgress((prevProgress) =>
-          prevProgress < 100 ? prevProgress + 10 : prevProgress
+          prevProgress < 100 ? prevProgress + 20 : prevProgress
         );
-        setNoASCII((prevText) => prevText.slice(1));
-        if (noASCII.length === 0) {
-          clearInterval(genLoad);
-        }
+
         setLoadingText(
           loadingTextOptions[
             Math.floor(Math.random() * loadingTextOptions.length)
           ]
         );
       }
-      setDoneASCII(progASCII + progASCII.repeat(progress));
-    }, 200);
+      const doneWidth = (parentWidth * progress) / 100;
+      // Set the doneASCII to a fixed number of characters based on the calculated width
+      const doneChars = Math.floor((doneWidth / 10)); // Adjust this divisor as needed
+      setDoneASCII(progASCII.repeat(doneChars));
+
+    }, 250);
 
     return () => clearInterval(genLoad);
-  }, [progress]);
+  }, [progress, parentRef]);
+
 
   return (
     <div className="w-screen h-screen flex flex-col items-center justify-center">
       <pre className="mb-2 text-white">{loadingASCII}</pre>
       <div className="font-fira text-white loading-text">{loadingText}</div>
-      <div ref={parentRef} className="progress-bar-container">
+      <div ref={parentRef} className=" h-[20px] w-[80%]">
         <div
-          id="progress-bar"
-          className=" text-white bg-#4caf50 h-[100vh] w-[100vw]"
-          style={{ width: `${progress}%` }}
-        >
-          {doneASCII}
+          className=" text-white bg-#4caf50 h-[100%] overflow-hidden"
+          style={{ width: '100%'}}
+          >
+            <span className="text-white">{doneASCII}</span>
         </div>
       </div>
-    </div>
+      </div>
   );
 };
-
-
 
 export default LoadingScreen;
