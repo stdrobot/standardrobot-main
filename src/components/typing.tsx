@@ -15,6 +15,10 @@ interface LSProps {
   delay: number;
 }
 
+export function BlinkingCursor() {
+  return <span className="blinking-cursor">|</span>;
+}
+
 const Typewriter: React.FC<TWProps> = ({
   txt,
   delay,

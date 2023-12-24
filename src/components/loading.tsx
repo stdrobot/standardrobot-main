@@ -1,11 +1,12 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 interface LoadingScreenProps {
   onProgressComplete: () => void;
 }
 
-const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
-  const pendingASCII = 'H ';
+const LoadingScreen: React.FC<LoadingScreenProps> = ({
+  onProgressComplete,
+}) => {
   const progASCII = '▓ ';
 
   const loadingASCII = `
@@ -49,11 +50,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
       'Browsing Reddit ...',
       'Fetching data ...',
       'Checking Cache ...',
-      'Reading Config ...'
+      'Reading Config ...',
     ];
     const genLoad = setInterval(() => {
       if (progress < 100) {
-
         setProgress((prevProgress) =>
           prevProgress < 100 ? prevProgress + 20 : prevProgress
         );
@@ -66,14 +66,12 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
       }
       const doneWidth = (parentWidth * progress) / 100;
       // Set the doneASCII to a fixed number of characters based on the calculated width
-      const doneChars = Math.floor((doneWidth / 10)); // Adjust this divisor as needed
+      const doneChars = Math.floor(doneWidth / 10); // Adjust this divisor as needed
       setDoneASCII(progASCII.repeat(doneChars));
-
     }, 250);
 
     return () => clearInterval(genLoad);
   }, [progress, parentRef]);
-
 
   return (
     <div className="w-screen h-screen flex flex-col items-center justify-center">
@@ -82,12 +80,12 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
       <div ref={parentRef} className=" h-[20px] w-[80%]">
         <div
           className=" text-white bg-#4caf50 h-[100%] overflow-hidden"
-          style={{ width: '100%'}}
-          >
-            <span className="text-white">{doneASCII}</span>
+          style={{ width: '100%' }}
+        >
+          <span className="text-white">{doneASCII}</span>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 

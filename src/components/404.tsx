@@ -24,7 +24,7 @@ export default function BlueScreen() {
             broken page.
           </p>
           <p className="mt-20 ">nothing here.</p>
-          <p className="mt-10">Go back.</p>
+          <p className="mt-10">go back.</p>
         </div>
       </div>
     </body>

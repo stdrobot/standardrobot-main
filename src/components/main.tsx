@@ -6,21 +6,35 @@ import Typewriter, { LoadingSequence } from './typing';
 import { BiChevronRight } from 'react-icons/bi/index';
 
 const Buttons = () => {
+  const minimize = () => {
+    alert('Window Minimized');
+  };
+
+  const maximize = () => {
+    alert('Window maximized');
+  };
+
   const close = () => {
     alert('Button clicked!');
   };
 
   return (
-    <div className="bg-black flex justify-between items-center">
+    <div className="bg-black flex justify-between">
       <div className="flex space-x-2 text-red-500">
         <button
           className="w-3 h-3 rounded-full border-dashed border-white bg-red-500"
           onClick={close}
         ></button>
-        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+        <button
+          className="w-3 h-3 rounded-full bg-yellow-500"
+          onClick={minimize}
+        ></button>
+        <button
+          className="w-3 h-3 rounded-full bg-green-500"
+          onClick={maximize}
+        ></button>
       </div>
-      <p className="text-white text-sm">zsh</p>
+      <p className="text-white mr-12 text-sm">zsh</p>
     </div>
   );
 };
@@ -35,7 +49,7 @@ const Main = () => {
     </p>
   );
   return (
-    <div className="bg-black p-8 text-lg h-screen w-screen flex flex-col overflow-auto">
+    <div className="bg-black p-8 text-lg h-screen w-screen flex flex-col overflow-hidden">
       <Buttons />
       <div className="flex">
         <Navbar />
