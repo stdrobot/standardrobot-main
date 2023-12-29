@@ -1,56 +1,23 @@
-'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navbar from './navbar';
 import './components.css';
+import ClosedView from './abstract';
 import Typewriter, { LoadingSequence } from './typing';
+// import Buttons from './buttons';
 import { BiChevronRight } from 'react-icons/bi/index';
 
-const Buttons = () => {
-  const minimize = () => {
-    alert('Window Minimized');
-  };
-
-  const maximize = () => {
-    alert('Window maximized');
-  };
-
-  const close = () => {
-    alert('Button clicked!');
-  };
-
-  return (
-    <div className="bg-black flex justify-between">
-      <div className="flex space-x-2 text-red-500">
-        <button
-          className="w-3 h-3 rounded-full border-dashed border-white bg-red-500"
-          onClick={close}
-        ></button>
-        <button
-          className="w-3 h-3 rounded-full bg-yellow-500"
-          onClick={minimize}
-        ></button>
-        <button
-          className="w-3 h-3 rounded-full bg-green-500"
-          onClick={maximize}
-        ></button>
-      </div>
-      <p className="text-white mr-12 text-sm">zsh</p>
-    </div>
-  );
-};
-
-const Main = () => {
+const ContentBody = () => {
   const aboutMe = (
     <p className="text-white">
       + I'm standardrobot I enjoy making electronic music and programming.
-      <br /> + Professionally, I'm a software engineer with have a strong
-      interest in cybersecurity.
+      <br /> + I'm a software engineer with have a strong interest in
+      cybersecurity.
       <br />+ Check out the links above for things.
     </p>
   );
+
   return (
-    <div className="bg-black p-8 text-lg h-screen w-screen flex flex-col overflow-hidden">
-      <Buttons />
+    <>
       <div className="flex">
         <Navbar />
       </div>
@@ -96,6 +63,51 @@ const Main = () => {
           delay={2000}
         />
       </div>
+    </>
+  );
+};
+
+const Main = () => {
+  // Define the initial state and a method to update it
+
+  const [buttonState, setButtonState] = useState('Main');
+  // Handler for the button click event
+  const closeClick = () => {
+    setButtonState(buttonState === 'Main' ? 'Closed' : 'Main');
+    console.log(buttonState);
+  };
+
+  const minimizeClick = () => {
+    alert('Window Minimized');
+  };
+
+  const maximizeClick = () => {
+    alert('Window maximized');
+  };
+
+  const Buttons = () => (
+    <div className="bg-black flex justify-between">
+      <div className="flex space-x-2 text-red-500">
+        <button
+          className="w-3 h-3 rounded-full border-dashed border-white bg-red-500"
+          onClick={closeClick}
+        ></button>
+        <button
+          className="w-3 h-3 rounded-full bg-yellow-500"
+          onClick={minimizeClick}
+        ></button>
+        <button
+          className="w-3 h-3 rounded-full bg-green-500"
+          onClick={maximizeClick}
+        ></button>
+      </div>
+      <p className="text-white mr-12 text-sm">zsh</p>
+    </div>
+  );
+  return (
+    <div className="bg-black text-lg h-screen w-full flex flex-col overflow-hidden">
+      <Buttons />
+      {buttonState === 'Main' ? <ContentBody /> : <ClosedView />}
     </div>
   );
 };

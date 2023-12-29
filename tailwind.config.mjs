@@ -12,6 +12,7 @@ export const theme = {
       mainSilver: '#A0B2BB',
       mainPurple: '#695A88',
       textPurple: '#79689c',
+      backgreen: '#A7AAAB',
       border: '#AAAAAA',
     },
     fontFamily: {

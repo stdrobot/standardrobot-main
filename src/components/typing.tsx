@@ -1,4 +1,9 @@
 'use client';
+
+/*
+ * This file is dedicated to all of the typing-based emulations.
+ */
+
 import React, { useState, useEffect, type ReactNode } from 'react';
 import { DotPulse } from '@uiball/loaders';
 interface TWProps {
