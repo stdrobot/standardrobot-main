@@ -11,14 +11,13 @@ export default function Home() {
     setLoadingComplete(false);
   };
 
-
   return (
-    <div className="bg-black p-8 w-screen h-screen flex flex-col ">
+    <body className="bg-black text-lg h-screen w-full flex flex-col overflow-hidden">
       {loadingComplete ? (
         <LoadingScreen onProgressComplete={handleProgressComplete} />
       ) : (
         <Main />
       )}
-    </div>
+    </body>
   );
 }

@@ -74,15 +74,17 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
   }, [progress, parentRef]);
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-center">
-      <pre className="mb-2 text-white">{loadingASCII}</pre>
-      <div className="font-fira text-white loading-text">{loadingText}</div>
-      <div ref={parentRef} className=" h-[20px] w-[80%]">
-        <div
-          className=" text-white bg-#4caf50 h-[100%] overflow-hidden"
-          style={{ width: '100%' }}
-        >
-          <span className="text-white">{doneASCII}</span>
+    <div className="bg-black p-8 w-screen h-screen flex flex-col ">
+      <div className="w-screen h-screen flex flex-col items-center justify-center">
+        <pre className="mb-2 text-white">{loadingASCII}</pre>
+        <div className="font-fira text-white loading-text">{loadingText}</div>
+        <div ref={parentRef} className=" h-[20px] w-[80%]">
+          <div
+            className=" text-white bg-#4caf50 h-[100%] overflow-hidden"
+            style={{ width: '100%' }}
+          >
+            <span className="text-white">{doneASCII}</span>
+          </div>
         </div>
       </div>
     </div>

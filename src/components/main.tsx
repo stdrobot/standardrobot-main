@@ -86,7 +86,7 @@ const Main = () => {
   };
 
   const Buttons = () => (
-    <div className="bg-black flex justify-between">
+    <div className="bg-black p-8 flex justify-between">
       <div className="flex space-x-2 text-red-500">
         <button
           className="w-3 h-3 rounded-full border-dashed border-white bg-red-500"
@@ -105,10 +105,10 @@ const Main = () => {
     </div>
   );
   return (
-    <div className="bg-black text-lg h-screen w-full flex flex-col overflow-hidden">
+    <>
       <Buttons />
       {buttonState === 'Main' ? <ContentBody /> : <ClosedView />}
-    </div>
+    </>
   );
 };
 

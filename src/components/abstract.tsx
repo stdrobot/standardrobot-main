@@ -6,7 +6,11 @@ import React from 'react';
  */
 
 const ClosedView = () => {
-  return <div className="bg-backgreen w-full h-full"></div>;
+  return (
+    <div className="bg-backgreen h-[100%] mt-0">
+      <h1 className="font-firacode text-2xl text-mainPurple">standardrobot</h1>
+    </div>
+  );
 };
 
 export default ClosedView;
