@@ -9,7 +9,7 @@ export const theme = {
     },
     colors: {
       bsod: '#000A5F',
-      mainSilver: '#A0B2BB',
+      mainSilver: '#C5CBD3',
       mainPurple: '#695A88',
       textPurple: '#79689c',
       backgreen: '#A7AAAB',

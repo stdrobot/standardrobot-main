@@ -12,12 +12,12 @@ export default function Home() {
   };
 
   return (
-    <body className="bg-black text-lg h-screen w-full flex flex-col overflow-hidden">
+    <>
       {loadingComplete ? (
         <LoadingScreen onProgressComplete={handleProgressComplete} />
       ) : (
         <Main />
       )}
-    </body>
+    </>
   );
 }

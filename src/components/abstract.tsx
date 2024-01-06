@@ -7,8 +7,9 @@ import React from 'react';
 
 const ClosedView = () => {
   return (
-    <div className="bg-backgreen h-[100%] mt-0">
-      <h1 className="font-firacode text-2xl text-mainPurple">standardrobot</h1>
+    <div className="bg-backgreen h-[100%] mt-0 font-firacode text-mainPurple">
+      <h1 className="text-2xl mt-3">standardrobot</h1>
+      <p>standardrobot</p>
     </div>
   );
 };
