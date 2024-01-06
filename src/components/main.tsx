@@ -69,8 +69,8 @@ const SecondMain = () => {
       <body
         className={
           buttonState === 'Normal'
-            ? 'bg-black text-lg h-screen w-full flex flex-col overflow-hidden'
-            : 'bg-mainSilver text-lg h-screen w-full flex flex-col overflow-hidden'
+            ? 'bg-black text-lg h-screen w-full flex flex-col overflow-x-hidden'
+            : 'bg-mainSilver text-lg h-screen w-full flex flex-col overflow-x-hidden'
         }
       >
         <Buttons />
