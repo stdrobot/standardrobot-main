@@ -4,9 +4,14 @@ import './components.css';
 import ClosedView from './abstract';
 import Typewriter, { LoadingSequence } from './typing';
 // import Buttons from './buttons';
+import LoadingScreen from './loading';
 import { BiChevronRight } from 'react-icons/bi/index';
 
-const SecondMain = () => {
+/*
+  This function includes the main landing page, with a corresponding light mode.
+*/
+
+function Main(){
   const [buttonState, setButtonState] = useState('Normal');
   // Handler for the button click event
   const lightClick = () => {
@@ -154,4 +159,24 @@ const SecondMain = () => {
   );
 };
 
-export default SecondMain;
+/*
+  This is the primary component called in '../pages/index.astro'
+*/
+export default function Home() {
+  const [loadingComplete, setLoadingComplete] = useState(true);
+
+  const handleProgressComplete = () => {
+    setLoadingComplete(false);
+  };
+
+  return (
+    <body className="overflow-hidden">
+      {loadingComplete ? (
+        <LoadingScreen onProgressComplete={handleProgressComplete} />
+      ) : (
+        <Main />
+      )}
+    </body>
+  );
+}
+

@@ -74,7 +74,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
   }, [progress, parentRef]);
 
   return (
-    <div className="bg-black p-8 w-screen h-screen flex flex-col ">
+    <div className="bg-black p-8 w-screen h-screen flex flex-col">
       <div className="w-screen h-screen flex flex-col items-center justify-center">
         <pre className="mb-2 text-white">{loadingASCII}</pre>
         <div className="font-fira text-white loading-text">{loadingText}</div>
