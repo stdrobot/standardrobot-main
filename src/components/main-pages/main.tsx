@@ -53,7 +53,7 @@ function Main() {
             : 'text-black mr-12 text-sm'
         }
       >
-        zsh
+        blog
       </p>
     </div>
   );
