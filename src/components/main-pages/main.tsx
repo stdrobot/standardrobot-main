@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../props/navbar';
-import './components.css';
-import ClosedView from './abstract';
+import '../components.css';
 import Typewriter, { LoadingSequence } from '../props/typing';
-// import Buttons from './buttons';
 import LoadingScreen from '../props/loading';
 import { BiChevronRight } from 'react-icons/bi/index';
 
@@ -11,7 +9,7 @@ import { BiChevronRight } from 'react-icons/bi/index';
   This function includes the main landing page, with a corresponding light mode.
 */
 
-function Main(){
+function Main() {
   const [buttonState, setButtonState] = useState('Normal');
   // Handler for the button click event
   const lightClick = () => {
@@ -157,7 +155,7 @@ function Main(){
       <ContentBody />
     </>
   );
-};
+}
 
 /*
   This is the primary component called in '../pages/index.astro'
@@ -179,4 +177,3 @@ export default function Home() {
     </body>
   );
 }
-
