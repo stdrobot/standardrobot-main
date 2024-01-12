@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Navbar from './navbar';
+import Navbar from '../props/navbar';
 import './components.css';
 import ClosedView from './abstract';
-import Typewriter, { LoadingSequence } from './typing';
+import Typewriter, { LoadingSequence } from '../props/typing';
 // import Buttons from './buttons';
-import LoadingScreen from './loading';
+import LoadingScreen from '../props/loading';
 import { BiChevronRight } from 'react-icons/bi/index';
 
 /*
