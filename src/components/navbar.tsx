@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ hue }) => {
         />
         <SiteLink
           title="GitHub"
-          link="https://github.com/standard-robot"
+          link="https://github.com/stdrobot"
           content="src code"
         />
       </div>
