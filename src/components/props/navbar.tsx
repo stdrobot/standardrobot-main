@@ -32,11 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ hue }) => {
           link="https://instagram.com/standardrobot.wav"
           content="pics"
         />
-        <SiteLink
-          title="Blog"
-          link="https://blog.standardrobot.dev"
-          content="words"
-        />
+        <SiteLink title="Blog" link="/blog" content="words" />
         <SiteLink
           title="Twitter"
           link="https://twitter.com/standardrobot_"
