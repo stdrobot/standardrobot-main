@@ -32,3 +32,8 @@
   font-size: 18px;
   margin-bottom: 20px;
 }
+
+/* Add this in your global CSS file */
+.dot {
+  transition: transform 0.3s ease-in-out;
+}

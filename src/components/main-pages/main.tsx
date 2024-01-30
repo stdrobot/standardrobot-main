@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../props/navbar';
 import '../components.css';
 import Typewriter, { LoadingSequence } from '../props/typing';
@@ -167,13 +167,20 @@ export default function Home() {
     setLoadingComplete(false);
   };
 
+  useEffect(() => {
+    if (sessionStorage.getItem('firstLoadDone') === null) {
+      setLoadingComplete(true);
+      sessionStorage.setItem('firstLoadDone', '1'); // Set the flag
+    }
+  }, []);
+
   return (
-    <body className="overflow-hidden">
+    <>
       {loadingComplete ? (
         <LoadingScreen onProgressComplete={handleProgressComplete} />
       ) : (
         <Main />
       )}
-    </body>
+    </>
   );
 }
