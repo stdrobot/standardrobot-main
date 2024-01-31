@@ -1,12 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
 interface LoadingScreenProps {
   onProgressComplete: () => void;
 }
 
-const LoadingScreen: React.FC<LoadingScreenProps> = ({
-  onProgressComplete,
-}) => {
+const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
   const progASCII = '▓ ';
 
   const loadingASCII = `
@@ -50,11 +48,11 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
       'Browsing Reddit ...',
       'Fetching data ...',
       'Checking Cache ...',
-      'Reading Config ...',
+      'Reading Config ...'
     ];
     const genLoad = setInterval(() => {
       if (progress < 100) {
-        setProgress((prevProgress) =>
+        setProgress(prevProgress =>
           prevProgress < 100 ? prevProgress + 20 : prevProgress
         );
 
@@ -74,20 +72,21 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
   }, [progress, parentRef]);
 
   return (
-    <div className="bg-black p-8 w-screen h-screen flex flex-col">
-      <div className="w-screen h-screen flex flex-col items-center justify-center">
-        <pre className="mb-2 text-white">{loadingASCII}</pre>
-        <div className="font-fira text-white loading-text">{loadingText}</div>
-        <div ref={parentRef} className=" h-[20px] w-[80%]">
-          <div
-            className=" text-white bg-#4caf50 h-[100%] overflow-hidden"
-            style={{ width: '100%' }}
-          >
-            <span className="text-white">{doneASCII}</span>
+    <body className="overflow-hidden">
+      <div className="bg-black p-8 w-screen h-screen flex flex-col">
+        <div className="w-screen h-screen flex flex-col items-center justify-center">
+          <pre className="mb-2 text-white">{loadingASCII}</pre>
+          <div className="font-fira text-white loading-text">{loadingText}</div>
+          <div ref={parentRef} className=" h-[20px] w-[80%]">
+            <div
+              className=" text-white bg-#4caf50 h-[100%] overflow-hidden"
+              style={{width: '100%'}}>
+              <span className="text-white">{doneASCII}</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </body>
   );
 };
 
