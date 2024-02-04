@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import Navbar from '../props/navbar';
 import '../components.css';
-import Typewriter, { LoadingSequence } from '../props/typing';
+import Typewriter, {LoadingSequence} from '../props/typing';
 import LoadingScreen from '../props/loading';
-import { BiChevronRight } from 'react-icons/bi/index';
+import {BiChevronRight} from 'react-icons/bi/index';
 
 /*
   This function includes the main landing page, with a corresponding light mode.
@@ -35,24 +35,20 @@ function Main() {
       <div className="flex space-x-2 text-red-500">
         <button
           className="w-3 h-3 rounded-full border-dashed border-white bg-red-500"
-          onClick={closeClick}
-        ></button>
+          onClick={closeClick}></button>
         <button
           className="w-3 h-3 rounded-full bg-yellow-500"
-          onClick={minimizeClick}
-        ></button>
+          onClick={minimizeClick}></button>
         <button
           className="w-3 h-3 rounded-full bg-green-500"
-          onClick={maximizeClick}
-        ></button>
+          onClick={maximizeClick}></button>
       </div>
       <p
         className={
           buttonState === 'Normal'
             ? 'text-white mr-12 text-sm'
             : 'text-black mr-12 text-sm'
-        }
-      >
+        }>
         zsh
       </p>
     </div>
@@ -72,10 +68,9 @@ function Main() {
       <body
         className={
           buttonState === 'Normal'
-            ? 'bg-black text-lg h-screen w-full flex flex-col overflow-x-hidden'
-            : 'bg-mainSilver text-lg h-screen w-full flex flex-col overflow-x-hidden'
-        }
-      >
+            ? 'bg-black text-lg h-screen min-w-0 flex flex-col overflow-x-hidden'
+            : 'bg-mainSilver text-lg h-screen min-w-0 flex flex-col overflow-x-hidden'
+        }>
         <Buttons />
         <div className="flex items-center justify-center">
           <button
@@ -84,8 +79,7 @@ function Main() {
                 ? ' text-white w-6 h-6 rounded-full border-mainPurple border-3 border-dashed'
                 : 'text-black w-6 h-6 rounded-full border-mainPurple border-3 border-dashed'
             }
-            onClick={lightClick}
-          >
+            onClick={lightClick}>
             MODE
           </button>
         </div>
@@ -103,7 +97,7 @@ function Main() {
           />
         </div>
 
-        <div className="p-12">
+        <div className="p-12 min-w-0">
           <LoadingSequence
             childElement={
               <span className="items-center flex text-textPurple">
@@ -122,8 +116,7 @@ function Main() {
                   buttonState === 'Normal'
                     ? 'w-full text-white'
                     : 'w-full text-black'
-                }
-              >
+                }>
                 + standardrobot@1.0.0
               </p>
             }
