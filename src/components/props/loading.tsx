@@ -41,21 +41,18 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
       'Checking For Updates ...',
       'Updating Drivers ...',
       'Removing Ligatures Because They Suck ...',
-      'Saying Hello, World ...',
+      'Writing Hello, World!',
       'Hold on ...',
-      'Installing Arch ...',
-      'Generating Ambient Music ...',
-      'Browsing Reddit ...',
       'Fetching data ...',
       'Checking Cache ...',
       'Reading Config ...'
     ];
+
     const genLoad = setInterval(() => {
       if (progress < 100) {
         setProgress(prevProgress =>
           prevProgress < 100 ? prevProgress + 20 : prevProgress
         );
-
         setLoadingText(
           loadingTextOptions[
             Math.floor(Math.random() * loadingTextOptions.length)
@@ -63,8 +60,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
         );
       }
       const doneWidth = (parentWidth * progress) / 100;
-      // Set the doneASCII to a fixed number of characters based on the calculated width
-      const doneChars = Math.floor(doneWidth / 10); // Adjust this divisor as needed
+      const doneChars = Math.floor(doneWidth / 10);
       setDoneASCII(progASCII.repeat(doneChars));
     }, 250);
 
@@ -72,15 +68,17 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({onProgressComplete}) => {
   }, [progress, parentRef]);
 
   return (
-    <body className="min-w-0 overflow-hidden">
-      <div className="bg-black p-8 w-screen h-screen flex flex-col">
-        <div className="w-screen h-screen flex flex-col items-center justify-center">
-          <pre className="mb-2 text-white">{loadingASCII}</pre>
-          <div className="font-fira text-white loading-text">{loadingText}</div>
+    <body className="bg-black min-w-0 overflow-hidden">
+      <div className="p-8 w-screen h-screen flex flex-col">
+        <div className="min-w-0 h-screen flex flex-col items-center justify-center">
+          <span className="mb-2 whitespace-pre text-mainPurple">
+            {loadingASCII}
+          </span>
+          <div className="font-fira text-mainSilver loading-text">
+            {loadingText}
+          </div>
           <div ref={parentRef} className=" h-[20px] w-[80%]">
-            <div
-              className=" text-white bg-#4caf50 h-[100%] overflow-hidden"
-              style={{width: '100%'}}>
+            <div className="min-w-0 text-mainSilver h-[100%] overflow-hidden">
               <span className="text-white">{doneASCII}</span>
             </div>
           </div>

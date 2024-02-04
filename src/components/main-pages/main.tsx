@@ -169,11 +169,12 @@ export default function Home() {
 
   return (
     <>
-      {loadingComplete ? (
+      {/* {loadingComplete ? (
         <LoadingScreen onProgressComplete={handleProgressComplete} />
       ) : (
         <Main />
-      )}
+      )} */}
+      <LoadingScreen onProgressComplete={handleProgressComplete}/>
     </>
   );
 }
