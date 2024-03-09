@@ -61,7 +61,7 @@ function Main() {
   const ContentBody = () => {
     const aboutMe = (
       <p className={buttonState === 'Normal' ? 'text-white' : 'text-black'}>
-        + I'm standardrobot I enjoy making electronic music and programming.
+        + I'm standardpointer I enjoy making electronic music and programming.
         <br /> + I'm a software engineer with have a strong interest in
         cybersecurity.
         <br />+ Check out the links above for things.
@@ -111,7 +111,7 @@ function Main() {
                 $&emsp;
                 <Typewriter
                   color={buttonState === 'Normal' ? 'white' : 'black'}
-                  txt="pkg install standardrobot"
+                  txt="pkg install standardpointer"
                   delay={10}
                 />
               </span>
@@ -124,7 +124,7 @@ function Main() {
                     : 'w-full text-black'
                 }
               >
-                + standardrobot@1.0.0
+                + standardpointer@1.0.0
               </p>
             }
             delay={500}

@@ -29,27 +29,27 @@ const Navbar: React.FC<NavbarProps> = ({ hue }) => {
       <div className="mb-16 grid w-full grid-cols-1 md:grid-cols-5 gap-4">
         <SiteLink
           title="IG"
-          link="https://instagram.com/standardrobot.wav"
+          link="https://instagram.com/standardpointer"
           content="pics"
         />
         <SiteLink
           title="Blog"
-          link="https://blog.standardrobot.dev"
+          link="https://blog.standardpointer.com"
           content="words"
         />
         <SiteLink
           title="Twitter"
-          link="https://twitter.com/standardrobot_"
+          link="https://twitter.com/standardpointer"
           content="fewer words"
         />
         <SiteLink
           title="SoundCloud"
-          link="https://soundcloud.com/standardrobot"
+          link="https://soundcloud.com/standardpointer"
           content="tunes"
         />
         <SiteLink
           title="GitHub"
-          link="https://github.com/stdrobot"
+          link="https://github.com/standardpointer"
           content="src code"
         />
       </div>
