@@ -61,9 +61,9 @@ function Main() {
   const ContentBody = () => {
     const aboutMe = (
       <p className={buttonState === 'Normal' ? 'text-white' : 'text-black'}>
-        + I'm standardpointer I enjoy making electronic music and programming.
-        <br /> + I'm a software engineer with have a strong interest in
-        cybersecurity.
+        + I'm standardpointer. I enjoy making electronic music and programming.
+        <br /> + I'm a site reliability engineer with have a strong interest in
+        cybersecurity. <br /> + I develop small stuff on my own, too.
         <br />+ Check out the links above for things.
       </p>
     );
@@ -107,7 +107,7 @@ function Main() {
           <LoadingSequence
             childElement={
               <span className="items-center flex text-textPurple">
-                /home/robot <BiChevronRight size={24} color="textPurple" />{' '}
+                /home/pointer <BiChevronRight size={24} color="textPurple" />{' '}
                 $&emsp;
                 <Typewriter
                   color={buttonState === 'Normal' ? 'white' : 'black'}
@@ -133,7 +133,7 @@ function Main() {
           <LoadingSequence
             childElement={
               <span className="items-center flex text-textPurple">
-                /home/robot <BiChevronRight size={24} color="textPurple" />{' '}
+                /home/pointer <BiChevronRight size={24} color="textPurple" />{' '}
                 $&emsp;
                 <Typewriter
                   color={buttonState === 'Normal' ? 'white' : 'black'}

@@ -13,6 +13,7 @@ export const theme = {
       mainPurple: '#695A88',
       textPurple: '#79689c',
       backgreen: '#A7AAAB',
+      matteBlack: '#28282B',
       border: '#AAAAAA',
     },
     fontFamily: {
