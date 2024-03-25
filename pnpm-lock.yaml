@@ -11,7 +11,7 @@ overrides:
 dependencies:
   '@astrojs/react':
     specifier: ^3.0.3
-    version: 3.0.3(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0)
+    version: 3.0.3(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.3)
   '@astrojs/rss':
     specifier: ^2.4.4
     version: 2.4.4
@@ -24,18 +24,18 @@ dependencies:
   '@astrojs/ts-plugin':
     specifier: ^1.2.0
     version: 1.2.0
-  '@sanity/astro':
-    specifier: ^3.0.0
-    version: 3.0.0(@sanity/client@6.15.7)(astro@3.3.3)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.35.2)(styled-components@6.1.8)
-  '@sanity/client':
-    specifier: ^6.15.7
-    version: 6.15.7
+  '@portabletext/types':
+    specifier: ^2.0.11
+    version: 2.0.11
   '@uiball/loaders':
     specifier: ^1.3.0
     version: 1.3.0(react-dom@18.2.0)(react@18.2.0)
   astro:
     specifier: ^3.3.3
     version: 3.3.3(typescript@5.2.2)
+  astro-portabletext:
+    specifier: ^0.9.7
+    version: 0.9.7
   install:
     specifier: ^0.13.0
     version: 0.13.0
@@ -51,9 +51,6 @@ dependencies:
   react-icons:
     specifier: ^4.11.0
     version: 4.11.0(react@18.2.0)
-  sanity:
-    specifier: ^3.35.2
-    version: 3.35.2(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
 
 devDependencies:
   '@types/react':
@@ -151,7 +148,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/react@3.0.3(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0):
+  /@astrojs/react@3.0.3(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.3):
     resolution: {integrity: sha512-foliIy1whJobo+ZpsvOMS4WCiR0z4/2Seyxth5xMlweVVM+gA1Lqk0GdzE6F0ISUW9CuXrCRS7ZyTNW8SM6vog==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -162,7 +159,7 @@ packages:
     dependencies:
       '@types/react': 18.2.31
       '@types/react-dom': 18.2.14
-      '@vitejs/plugin-react': 4.1.0(vite@4.5.0)
+      '@vitejs/plugin-react': 4.1.0(vite@4.5.3)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       ultrahtml: 1.5.2
@@ -3330,7 +3327,7 @@ packages:
     resolution: {integrity: sha512-5b0PkOJsFBX5alChuIO3qpkt5vIZBevzLPhUQ1UP8UzVjL3F1VllnZxp/thfD8R5ol7D7WHkgZHIjdUBX4tDpQ==}
     dev: false
 
-  /@vitejs/plugin-react@4.1.0(vite@4.5.0):
+  /@vitejs/plugin-react@4.1.0(vite@4.5.3):
     resolution: {integrity: sha512-rM0SqazU9iqPUraQ2JlIvReeaxOoRj6n+PzB1C0cBzIbd8qP336nC39/R9yPi3wVcah7E7j/kdU1uCUqMEU4OQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -3341,7 +3338,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.23.2)
       '@types/babel__core': 7.20.3
       react-refresh: 0.14.0
-      vite: 4.5.0
+      vite: 4.5.3
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3532,6 +3529,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /astro-portabletext@0.9.7:
+    resolution: {integrity: sha512-kU2C0FQ+DE2DkoTkPDNbJXH/+V/9ioDy4udQp2uT3qsGqQaKDhVBbkWcVuCVgxB006cq71SUbj6svEtiFzKLCg==}
+    dependencies:
+      '@portabletext/toolkit': 2.0.13
+      '@portabletext/types': 2.0.11
+    dev: false
 
   /astro@3.3.3(typescript@5.2.2):
     resolution: {integrity: sha512-FZkv5nJfa2KADzwo8m6fytWzzhO3Uw/EOvxmBT2E1OW/dWUgIKbZd59TY3816gZl3le5Ct5amSAkaxcQghbUZA==}
